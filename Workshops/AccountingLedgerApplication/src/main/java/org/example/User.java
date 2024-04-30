@@ -12,19 +12,33 @@ public class User {
     private String address;
     private String phoneNumber;
 
+    static String USER_ID_HISTORY_FILE_PATH = "src/main/resources/userIdHistory";
+
+    /*
+     * Static initialization block to read the last assigned ID from the file.
+     * Handles IOException and NumberFormatException.
+     */
 
     static {
-        String USER_ID_HISTORY_FILE_PATH = "src/main/resources/userIdHistory";
-        // Read the last assigned ID from a file
         try (BufferedReader reader = new BufferedReader(new FileReader(USER_ID_HISTORY_FILE_PATH))) {
-            String line = reader.readLine();
-            if (line != null && !line.isEmpty()) {
-                lastId = Integer.parseInt(line);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty()) {
+                    lastId = Integer.parseInt(line.trim()); // Trim any leading or trailing whitespace
+                }
             }
-        } catch (IOException e) {
-            System.err.println("Error reading userIdHistory.csv: " + e.getMessage());
+        } catch (IOException | NumberFormatException e) {
+            System.err.println("Error reading userIdHistory file: " + e.getMessage());
         }
     }
+
+    /*
+     * Constructor to create a new User object with provided information.
+     * @param name The name of the user.
+     * @param email The email of the user.
+     * @param address The address of the user.
+     * @param phoneNumber The phone number of the user.
+     */
 
     public User(String name, String email, String address, String phoneNumber) {
         this.id = ++lastId;
@@ -34,25 +48,9 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String userInfoInput) {
-        Scanner scanner = new Scanner(userInfoInput);
+    // Getters and Setters (omitted for brevity)
 
-        System.out.print("Enter Name: ");
-        setName(scanner.nextLine());
 
-        System.out.print("Enter Email: ");
-        setEmail(scanner.nextLine());
-
-        System.out.print("Enter Address: ");
-        setAddress(scanner.nextLine());
-
-        System.out.print("Enter Phone Number: ");
-        setPhoneNumber(scanner.nextLine());
-
-        scanner.close();
-    }
-
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -93,13 +91,17 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    // Save the last assigned ID to a file when the application exits
+    /*
+     * Save the last assigned ID to a file when the application exits.
+     * Handles IOException.
+     */
     public static void saveLastId() {
-        String USER_ID_HISTORY_FILE_PATH = "src/main/resources/userIdHistory";
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_ID_HISTORY_FILE_PATH,true))) {
-            writer.write(String.valueOf(lastId));
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_ID_HISTORY_FILE_PATH, true))) {
+            writer.write(String.valueOf(lastId)); // Write the current ID into a new line
+            writer.newLine(); // Write a new line after the ID
+            lastId++; // Increment lastId after writing
         } catch (IOException e) {
-            System.err.println("Error writing lastId.txt: " + e.getMessage());
+            System.err.println("Error writing to userIdHistory file: " + e.getMessage());
         }
     }
 }
