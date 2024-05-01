@@ -4,6 +4,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,36 +20,45 @@ public class TransactionManager {
      * Each line in the file is assumed to represent a single transaction.
      * @return A list of transactions read from the file.
      */
-    public List<Transaction> loadAllTransactionsFromFile() {
+    public static List<Transaction> loadAllTransactionsFromFile() {
         List<Transaction> transactions = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(TRANSACTIONS_FILE_PATH))) {
+            // Skip the header line
+            String header = reader.readLine();
             String line;
-            boolean firstLine = true; // Flag to skip the first line
             while ((line = reader.readLine()) != null) {
-                if (firstLine) {
-                    firstLine = false;
-                    continue; // Skip the header line
+                String[] parts = line.split("\\|");
+                if (parts.length == 5) { // Ensure the line has correct format
+                    LocalDate date = LocalDate.parse(parts[0]);
+                    LocalTime time = LocalTime.parse(parts[1]);
+                    String description = parts[2];
+                    String vendor = parts[3];
+                    double amount = Double.parseDouble(parts[4]);
+                    Transaction transaction = new Transaction(date, time, description, vendor, amount);
+                    transactions.add(transaction);
+                } else {
+                    System.out.println("Invalid transaction data: " + line);
                 }
             }
-        } catch (FileNotFoundException e) {
-            // Handle file not found exception
-        } catch (IOException ex) {
-            // Handle IO exception
+        } catch (IOException | DateTimeParseException | NumberFormatException e) {
+            e.printStackTrace();
         }
         return transactions;
     }
+
+
 
     /*
      * Writes a list of transactions to the transactions file.
      * @param transactions The list of transactions to write to the file.
      */
-    public void writeTransactionsToFile(List<Transaction> transactions) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(TRANSACTIONS_FILE_PATH, true))) {
+    public static void writeTransactionsToFile(List<Transaction> transactions) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(TRANSACTIONS_FILE_PATH))) {
             for (Transaction transaction : transactions) {
-                writer.newLine();
                 String formattedDate = transaction.getDate().format(DateTimeFormatter.ISO_DATE);
-                String formattedTime = transaction.getTime().format(timeFormatter); // Use the timeFormatter
+                String formattedTime = transaction.getTime().format(timeFormatter);
                 writer.write(formattedDate + "|" + formattedTime + "|" + transaction.getDescription() + "|" + transaction.getVendor() + "|" + transaction.getAmount());
+                writer.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -56,46 +66,155 @@ public class TransactionManager {
     }
 
     /*
-     * Gathers transaction data from user input, creates a new transaction object,
-     * adds it to the list of transactions, writes transactions to the file,
-     * reloads transactions from the file, and displays the updated list of transactions.
+     * Process a deposit transaction.
      */
-    public void processNewTransaction(List<Transaction> transactions) {
-        // Gather transaction data from user input
-        System.out.println("Enter transaction description:");
-        String description = scanner.nextLine();
+    public static void processDeposit(List<Transaction> transactions) {
+        System.out.println("Enter payment amount:");
+        double depositAmount = getValidAmountInput();
 
-        System.out.println("Enter transaction vendor:");
-        String vendor = scanner.nextLine();
+        System.out.println("Enter payment description:");
+        String depositDescription = scanner.nextLine();
 
-        double amount = 0.0; // Initialize amount
-        boolean validInput = false;
-        while (!validInput) {
-            try {
-                System.out.println("Enter transaction amount:");
-                amount = Double.parseDouble(scanner.nextLine());
-                validInput = true; // Input is valid, exit loop
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number for the amount.");
-            }
-        }
+        System.out.println("Enter payment vendor:");
+        String depositVendor = scanner.nextLine();
+
+        // LocalDate and LocalTime objects for the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+
+        //Transaction object with the current date and time, description, vendor, and amount
+        Transaction depositTransaction = new Transaction(currentDate, currentTime, depositDescription, depositVendor, depositAmount);
+
+        // Add the deposit transaction to the list of transactions
+        transactions.add(depositTransaction);
+
+        // Write transactions to the file
+        writeTransactionsToFile(transactions);
+    }
+
+    public static void processPayment(List<Transaction> transactions) {
+        System.out.println("Enter payment amount:");
+        double paymentAmount = getValidAmountInput();
+
+        System.out.println("Enter payment description:");
+        String paymentDescription = scanner.nextLine();
+
+        System.out.println("Enter payment vendor:");
+        String paymentVendor = scanner.nextLine();
 
         // Create LocalDate and LocalTime objects for the current date and time
         LocalDate currentDate = LocalDate.now();
         LocalTime currentTime = LocalTime.now();
 
         // Create a Transaction object with the current date and time, description, vendor, and amount
-        Transaction transaction = new Transaction(currentDate, currentTime, description, vendor, amount);
+        Transaction paymentTransaction = new Transaction(currentDate, currentTime, paymentDescription, paymentVendor, -paymentAmount);
 
-        // Add the new transaction to the list of transactions
-        transactions.add(transaction);
+        // Add the payment transaction to the list of transactions
+        transactions.add(paymentTransaction);
 
         // Write transactions to the file
         writeTransactionsToFile(transactions);
+    }
+    /*
+     * Helper method to get valid amount input from the user.
+     */
+    private static double getValidAmountInput() {
+        double amount = 0.0;
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                amount = Double.parseDouble(scanner.nextLine());
+                validInput = true; // Input is valid, exit loop
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number for the amount:");
+            }
+        }
+        return amount;
+    }
 
-        // Reload transactions from the file (now includes the newly added transaction)
-        transactions.clear(); // Clear existing transactions before loading
-        transactions.addAll(loadAllTransactionsFromFile());
+    /*
+     * Generate a report for transactions within the current month.
+     */
+    public static void generateMonthToDateReport(List<Transaction> transactions) {
+        LocalDate currentDate = LocalDate.now();
+        int currentMonth = currentDate.getMonthValue();
+        int currentYear = currentDate.getYear();
 
+        System.out.println("Month To Date Report:");
+        for (Transaction transaction : transactions) {
+            LocalDate transactionDate = transaction.getDate();
+            int transactionMonth = transactionDate.getMonthValue();
+            int transactionYear = transactionDate.getYear();
+
+            if (transactionMonth == currentMonth && transactionYear == currentYear) {
+                System.out.println(transaction);
+            }
+        }
+    }
+
+    /*
+     * Generate a report for transactions within the previous month.
+     */
+    public static void generatePreviousMonthReport(List<Transaction> transactions) {
+        LocalDate currentDate = LocalDate.now();
+        int currentMonth = currentDate.getMonthValue();
+        int currentYear = currentDate.getYear();
+
+        int previousMonth = currentMonth - 1;
+        int previousYear = currentYear;
+
+        if (previousMonth == 0) {
+            previousMonth = 12;
+            previousYear--;
+        }
+
+        System.out.println("Previous Month Report:");
+        for (Transaction transaction : transactions) {
+            LocalDate transactionDate = transaction.getDate();
+            int transactionMonth = transactionDate.getMonthValue();
+            int transactionYear = transactionDate.getYear();
+
+            if (transactionMonth == previousMonth && transactionYear == previousYear) {
+                System.out.println(transaction);
+            }
+        }
+    }
+
+    /*
+     * Generate a report for transactions within the current year.
+     */
+    public static void generateYearToDateReport(List<Transaction> transactions) {
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+
+        System.out.println("Year To Date Report:");
+        for (Transaction transaction : transactions) {
+            LocalDate transactionDate = transaction.getDate();
+            int transactionYear = transactionDate.getYear();
+
+            if (transactionYear == currentYear) {
+                System.out.println(transaction);
+            }
+        }
+    }
+
+    /*
+     * Generate a report for transactions within the previous year.
+     */
+    public static void generatePreviousYearReport(List<Transaction> transactions) {
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+
+        int previousYear = currentYear - 1;
+
+        System.out.println("Previous Year Report:");
+        for (Transaction transaction : transactions) {
+            LocalDate transactionDate = transaction.getDate();
+            int transactionYear = transactionDate.getYear();
+
+            if (transactionYear == previousYear) {
+                System.out.println(transaction);
+            }
+        }
     }
 }

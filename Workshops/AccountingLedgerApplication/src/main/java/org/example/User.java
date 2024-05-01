@@ -98,8 +98,8 @@ public class User {
     public static void saveLastId() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_ID_HISTORY_FILE_PATH, true))) {
             writer.write(String.valueOf(lastId)); // Write the current ID into a new line
-            writer.newLine(); // Write a new line after the ID
-            lastId++; // Increment lastId after writing
+            writer.newLine();
+            lastId++;
         } catch (IOException e) {
             System.err.println("Error writing to userIdHistory file: " + e.getMessage());
         }
