@@ -106,15 +106,33 @@ public class TransactionManager {
         LocalDate currentDate = LocalDate.now();
         LocalTime currentTime = LocalTime.now();
 
-        // Create a Transaction object with the current date and time, description, vendor, and amount
-        Transaction paymentTransaction = new Transaction(currentDate, currentTime, paymentDescription, paymentVendor, -paymentAmount);
+        // Find transactions with remaining amount
+        List<Transaction> remainingTransactions = new ArrayList<>();
+        double remainingAmount = paymentAmount;
+        for (Transaction transaction : transactions) {
+            if (transaction.getAmount() > 0 && remainingAmount > 0) {
+                double transactionAmount = Math.min(transaction.getAmount(), remainingAmount);
+                remainingAmount -= transactionAmount;
+                Transaction partialPayment = new Transaction(transaction.getDate(), transaction.getTime(),
+                        paymentDescription, paymentVendor, -transactionAmount);
+                remainingTransactions.add(partialPayment);
+            }
+        }
 
-        // Add the payment transaction to the list of transactions
-        transactions.add(paymentTransaction);
+        // Add new transactions if remaining amount > 0
+        if (remainingAmount > 0) {
+            Transaction finalTransaction = new Transaction(currentDate, currentTime,
+                    paymentDescription, paymentVendor, -remainingAmount);
+            remainingTransactions.add(finalTransaction);
+        }
+
+        // Add the payment transactions to the list of transactions
+        transactions.addAll(remainingTransactions);
 
         // Write transactions to the file
         writeTransactionsToFile(transactions);
     }
+
     /*
      * Helper method to get valid amount input from the user.
      */

@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Scanner;
 
 public class UserInterface {
     private static Scanner scanner = new Scanner(System.in);
@@ -146,7 +149,7 @@ public class UserInterface {
             System.out.println("  2) Previous Month Entries");
             System.out.println("  3) Year To Date Entries");
             System.out.println("  4) Previous Year Entries");
-            System.out.println("  5) Search by Vendor Entries");
+            System.out.println("  5) Search by Criteria Entries");
             System.out.println("  0) Back");
 
             System.out.print("Enter your choice: ");
@@ -170,8 +173,8 @@ public class UserInterface {
                     TransactionManager.generatePreviousYearReport(transactions);
                     break;
                 case "5":
-                    System.out.println("Search by Vendor");
-                    searchByVendor(scanner, transactions);
+                    System.out.println("Search by Transaction");
+                    searchTransactions(scanner, transactions);
                     break;
                 case "0":
                     isReportRunning = false;
@@ -184,12 +187,92 @@ public class UserInterface {
     }
 
     /*
-     * Prompt the user for a vendor name and display all entries for that vendor.
+     * Prompt the user for custom transactions.
      */
-    private static void searchByVendor(Scanner scanner, List<Transaction> transactions) {
-        System.out.print("Enter vendor name: ");
-        String vendorName = scanner.nextLine();
+    private static void searchTransactions(Scanner scanner, List<Transaction> transactions) {
+        System.out.println("Enter search criteria:");
+        System.out.println("1. Start Date");
+        System.out.println("2. End Date");
+        System.out.println("3. Description");
+        System.out.println("4. Vendor");
+        System.out.println("5. Amount");
+        System.out.print("Choose an option: ");
 
+        int option = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (option) {
+            case 1:
+                System.out.print("Enter start date (yyyy-MM-dd): ");
+                LocalDate startDate = LocalDate.parse(scanner.nextLine());
+                searchByStartDate(transactions, startDate);
+                break;
+            case 2:
+                System.out.print("Enter end date (yyyy-MM-dd): ");
+                LocalDate endDate = LocalDate.parse(scanner.nextLine());
+                searchByEndDate(transactions, endDate);
+                break;
+            case 3:
+                System.out.print("Enter description: ");
+                String description = scanner.nextLine();
+                searchByDescription(transactions, description);
+                break;
+            case 4:
+                System.out.print("Enter vendor name: ");
+                String vendorName = scanner.nextLine();
+                searchByVendor(transactions, vendorName);
+                break;
+            case 5:
+                System.out.print("Enter amount: ");
+                double amount = scanner.nextDouble();
+                searchByAmount(transactions, amount);
+                break;
+            default:
+                System.out.println("Invalid option selected.");
+        }
+    }
+    /* Methods used for the custom search for SearchTransaction*/
+    private static void searchByStartDate(List<Transaction> transactions, LocalDate startDate) {
+        boolean found = false;
+        for (Transaction transaction : transactions) {
+            if (transaction.getDate().isAfter(startDate) || transaction.getDate().isEqual(startDate)) {
+                System.out.println(transaction);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No transactions found after or on the start date: " + startDate);
+        }
+    }
+
+    private static void searchByEndDate(List<Transaction> transactions, LocalDate endDate) {
+        boolean found = false;
+        for (Transaction transaction : transactions) {
+            if ((transaction.getDate().isBefore(endDate) || transaction.getDate().isEqual(endDate))
+                    && transaction.getAmount() > 0.0) {
+                System.out.println(transaction);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No transactions found before or on the end date or remaining amount is above 0.0: " + endDate);
+        }
+    }
+
+    private static void searchByDescription(List<Transaction> transactions, String description) {
+        boolean found = false;
+        for (Transaction transaction : transactions) {
+            if (transaction.getDescription().equalsIgnoreCase(description)) {
+                System.out.println(transaction);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No transactions found with description: " + description);
+        }
+    }
+
+    private static void searchByVendor(List<Transaction> transactions, String vendorName) {
         boolean found = false;
         for (Transaction transaction : transactions) {
             if (transaction.getVendor().equalsIgnoreCase(vendorName)) {
@@ -197,9 +280,21 @@ public class UserInterface {
                 found = true;
             }
         }
-
         if (!found) {
             System.out.println("No transactions found for vendor: " + vendorName);
+        }
+    }
+
+    private static void searchByAmount(List<Transaction> transactions, double amount) {
+        boolean found = false;
+        for (Transaction transaction : transactions) {
+            if (transaction.getAmount() == amount) {
+                System.out.println(transaction);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No transactions found with amount: " + amount);
         }
     }
 }

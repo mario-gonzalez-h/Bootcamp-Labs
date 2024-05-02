@@ -1,168 +1,179 @@
-date|time|description|vendor|amount
-2019-12-05|09:25:30|Grocery shopping|Supermarket|-75.50
-2019-11-20|13:15:00|Online order|Online Retailer|-120.00
+2019-12-05|09:25:30|Grocery shopping|Supermarket|-75.5
+2019-11-20|13:15:00|Online order|Online Retailer|-120.0
 2020-02-10|10:45:20|Coffee|Cafe|-5.25
-2020-01-15|11:30:00|Tech gadgets|Electronics Store|-300.00
-2019-10-22|14:20:45|Dining out|Restaurant|-45.00
+2020-01-15|11:30:00|Tech gadgets|Electronics Store|-300.0
+2019-10-22|14:20:45|Dining out|Restaurant|-45.0
 2020-04-05|08:55:10|Subscription renewal|Streaming Service|-15.99
 2019-08-30|12:40:15|Home decor purchase|Home Improvement Store|-90.75
-2020-03-12|16:30:00|Medical expenses|Hospital|-250.00
-2019-07-18|10:20:30|Fuel refill|Gas Station|-40.00
-2020-06-20|09:15:25|Grocery shopping|Supermarket|-80.50
-2019-06-24|13:05:00|Restaurant bill|Restaurant|-55.00
+2020-03-12|16:30:00|Medical expenses|Hospital|-250.0
+2019-07-18|10:20:30|Fuel refill|Gas Station|-40.0
+2020-06-20|09:15:25|Grocery shopping|Supermarket|-80.5
+2019-06-24|13:05:00|Restaurant bill|Restaurant|-55.0
 2020-05-08|11:50:45|Tech gadgets|Electronics Store|-180.99
 2019-05-29|15:10:30|Book purchase|Bookstore|-25.75
-2020-07-14|08:35:20|Gift purchase|Gift Shop|-20.00
-2019-04-12|14:45:00|Utility bill|Utility Company|-55.00
-2020-08-28|10:30:30|Movie tickets|Cinema|-30.00
+2020-07-14|08:35:20|Gift purchase|Gift Shop|-20.0
+2019-04-12|14:45:00|Utility bill|Utility Company|-55.0
+2020-08-28|10:30:30|Movie tickets|Cinema|-30.0
 2019-03-07|09:20:15|Coffee|Cafe|-4.25
-2020-09-19|12:15:00|Grocery shopping|Supermarket|-65.50
-2019-02-15|13:50:30|Medical expenses|Hospital|-200.00
+2020-09-19|12:15:00|Grocery shopping|Supermarket|-65.5
+2019-02-15|13:50:30|Medical expenses|Hospital|-200.0
 2020-10-02|14:10:45|Dining out|Restaurant|-40.25
 2019-01-10|09:35:20|Tech gadgets|Electronics Store|-150.99
-2020-11-28|08:40:00|Online order|Online Retailer|-60.00
-2018-12-05|09:25:30|Grocery shopping|Supermarket|-75.50
-2018-11-20|13:15:00|Online order|Online Retailer|-120.00
+2020-11-28|08:40:00|Online order|Online Retailer|-60.0
+2018-12-05|09:25:30|Grocery shopping|Supermarket|-75.5
+2018-11-20|13:15:00|Online order|Online Retailer|-120.0
 2019-02-10|10:45:20|Coffee|Cafe|-5.25
-2019-01-15|11:30:00|Tech gadgets|Electronics Store|-300.00
-2018-10-22|14:20:45|Dining out|Restaurant|-45.00
+2019-01-15|11:30:00|Tech gadgets|Electronics Store|-300.0
+2018-10-22|14:20:45|Dining out|Restaurant|-45.0
 2019-04-05|08:55:10|Subscription renewal|Streaming Service|-15.99
 2018-08-30|12:40:15|Home decor purchase|Home Improvement Store|-90.75
-2019-03-12|16:30:00|Medical expenses|Hospital|-250.00
-2018-07-18|10:20:30|Fuel refill|Gas Station|-40.00
-2019-06-20|09:15:25|Grocery shopping|Supermarket|-80.50
-2018-06-24|13:05:00|Restaurant bill|Restaurant|-55.00
+2019-03-12|16:30:00|Medical expenses|Hospital|-250.0
+2018-07-18|10:20:30|Fuel refill|Gas Station|-40.0
+2019-06-20|09:15:25|Grocery shopping|Supermarket|-80.5
+2018-06-24|13:05:00|Restaurant bill|Restaurant|-55.0
 2019-05-08|11:50:45|Tech gadgets|Electronics Store|-180.99
 2018-05-29|15:10:30|Book purchase|Bookstore|-25.75
-2019-07-14|08:35:20|Gift purchase|Gift Shop|-20.00
-2018-04-12|14:45:00|Utility bill|Utility Company|-55.00
-2019-08-28|10:30:30|Movie tickets|Cinema|-30.00
+2019-07-14|08:35:20|Gift purchase|Gift Shop|-20.0
+2018-04-12|14:45:00|Utility bill|Utility Company|-55.0
+2019-08-28|10:30:30|Movie tickets|Cinema|-30.0
 2018-03-07|09:20:15|Coffee|Cafe|-4.25
-2019-09-19|12:15:00|Grocery shopping|Supermarket|-65.50
-2018-02-15|13:50:30|Medical expenses|Hospital|-200.00
+2019-09-19|12:15:00|Grocery shopping|Supermarket|-65.5
+2018-02-15|13:50:30|Medical expenses|Hospital|-200.0
 2019-10-02|14:10:45|Dining out|Restaurant|-40.25
 2018-01-10|09:35:20|Tech gadgets|Electronics Store|-150.99
-2019-11-28|08:40:00|Online order|Online Retailer|-60.00
-2023-09-12|08:13:25|Electronics purchase|Electronics Store|-120.50
-2022-06-24|12:05:00|Restaurant bill|Restaurant|-75.00
+2019-11-28|08:40:00|Online order|Online Retailer|-60.0
+2023-09-12|08:13:25|Electronics purchase|Electronics Store|-120.5
+2022-06-24|12:05:00|Restaurant bill|Restaurant|-75.0
 2022-08-08|14:30:45|Book purchase|Bookstore|-25.99
 2023-05-29|10:20:30|Grocery shopping|Supermarket|-60.75
-2022-07-05|16:45:20|Fuel refill|Gas Station|-40.00
-2023-08-19|09:55:10|Movie tickets|Cinema|-30.00
-2022-06-02|11:10:00|Tech gadgets|Tech Store|-200.00
+2022-07-05|16:45:20|Fuel refill|Gas Station|-40.0
+2023-08-19|09:55:10|Movie tickets|Cinema|-30.0
+2022-06-02|11:10:00|Tech gadgets|Tech Store|-200.0
 2023-08-14|13:25:35|Subscription renewal|Streaming Service|-12.99
 2022-07-20|14:50:15|Home decor purchase|Home Improvement Store|-90.25
-2023-06-15|17:40:00|Car wash|Car Wash Service|-15.50
+2023-06-15|17:40:00|Car wash|Car Wash Service|-15.5
 2022-08-26|08:20:30|Coffee|Cafe|-4.75
-2023-06-05|12:15:00|Medical expenses|Hospital|-300.00
-2022-08-09|16:35:20|Gift purchase|Gift Shop|-20.00
-2023-07-25|09:45:45|Utility bill|Utility Company|-50.00
+2023-06-05|12:15:00|Medical expenses|Hospital|-300.0
+2022-08-09|16:35:20|Gift purchase|Gift Shop|-20.0
+2023-07-25|09:45:45|Utility bill|Utility Company|-50.0
 2022-06-30|08:30:30|Online subscription|Streaming Service|-9.99
-2023-08-02|10:25:15|Clothing purchase|Clothing Store|-80.00
+2023-08-02|10:25:15|Clothing purchase|Clothing Store|-80.0
 2022-07-12|14:20:00|Dining out|Restaurant|-45.25
-2023-07-17|15:35:45|Travel expenses|Travel Agency|-250.00
-2022-08-22|11:10:30|Grocery shopping|Supermarket|-70.50
-2023-07-08|09:40:00|Gasoline|Gas Station|-35.00
+2023-07-17|15:35:45|Travel expenses|Travel Agency|-250.0
+2022-08-22|11:10:30|Grocery shopping|Supermarket|-70.5
+2023-07-08|09:40:00|Gasoline|Gas Station|-35.0
 2022-08-14|13:30:25|Online order|Online Retailer|-60.99
-2023-06-24|12:05:00|Restaurant bill|Restaurant|-55.00
-2022-08-29|10:15:45|Tech gadgets|Tech Store|-150.00
-2023-07-12|08:13:25|Electronics purchase|Electronics Store|-120.50
-2022-06-24|12:05:00|Restaurant bill|Restaurant|-75.00
+2023-06-24|12:05:00|Restaurant bill|Restaurant|-55.0
+2022-08-29|10:15:45|Tech gadgets|Tech Store|-150.0
+2023-07-12|08:13:25|Electronics purchase|Electronics Store|-120.5
+2022-06-24|12:05:00|Restaurant bill|Restaurant|-75.0
 2022-08-08|14:30:45|Book purchase|Bookstore|-25.99
 2023-05-29|10:20:30|Grocery shopping|Supermarket|-60.75
-2022-07-05|16:45:20|Fuel refill|Gas Station|-40.00
-2023-08-19|09:55:10|Movie tickets|Cinema|-30.00
-2022-06-02|11:10:00|Tech gadgets|Tech Store|-200.00
+2022-07-05|16:45:20|Fuel refill|Gas Station|-40.0
+2023-08-19|09:55:10|Movie tickets|Cinema|-30.0
+2022-06-02|11:10:00|Tech gadgets|Tech Store|-200.0
 2023-08-14|13:25:35|Subscription renewal|Streaming Service|-12.99
 2022-07-20|14:50:15|Home decor purchase|Home Improvement Store|-90.25
-2023-06-15|17:40:00|Car wash|Car Wash Service|-15.50
+2023-06-15|17:40:00|Car wash|Car Wash Service|-15.5
 2022-08-26|08:20:30|Coffee|Cafe|-4.75
-2023-06-05|12:15:00|Medical expenses|Hospital|-300.00
-2022-08-09|16:35:20|Gift purchase|Gift Shop|-20.00
-2023-07-25|09:45:45|Utility bill|Utility Company|-50.00
+2023-06-05|12:15:00|Medical expenses|Hospital|-300.0
+2022-08-09|16:35:20|Gift purchase|Gift Shop|-20.0
+2023-07-25|09:45:45|Utility bill|Utility Company|-50.0
 2022-06-30|08:30:30|Online subscription|Streaming Service|-9.99
-2023-08-02|10:25:15|Clothing purchase|Clothing Store|-80.00
+2023-08-02|10:25:15|Clothing purchase|Clothing Store|-80.0
 2022-07-12|14:20:00|Dining out|Restaurant|-45.25
-2023-07-17|15:35:45|Travel expenses|Travel Agency|-250.00
-2022-08-22|11:10:30|Grocery shopping|Supermarket|-70.50
-2023-07-08|09:40:00|Gasoline|Gas Station|-35.00
+2023-07-17|15:35:45|Travel expenses|Travel Agency|-250.0
+2022-08-22|11:10:30|Grocery shopping|Supermarket|-70.5
+2023-07-08|09:40:00|Gasoline|Gas Station|-35.0
 2022-08-14|13:30:25|Online order|Online Retailer|-60.99
-2023-06-24|12:05:00|Restaurant bill|Restaurant|-55.00
-2022-08-29|10:15:45|Tech gadgets|Tech Store|-150.
+2023-06-24|12:05:00|Restaurant bill|Restaurant|-55.0
+2022-08-29|10:15:45|Tech gadgets|Tech Store|-150.0
 2023-04-16|09:30:45|Office supplies|Staples|-45.75
-2023-04-16|12:45:20|Consultation fee|Medical Clinic|200.00
-2023-04-17|08:20:10|Groceries|Supermarket|-65.30
+2023-04-16|12:45:20|Consultation fee|Medical Clinic|200.0
+2023-04-17|08:20:10|Groceries|Supermarket|-65.3
 2023-04-17|13:00:00|Web hosting subscription|HostGator|-12.99
-2023-04-18|11:10:15|Fuel|Gas Station|-40.00
-2023-04-18|14:25:30|Internet bill|ISP|60.00
-2023-04-19|10:55:00|Lunch with clients|Restaurant|-75.50
-2023-04-19|16:40:20|Computer repair|Tech Services|-150.00
-2023-04-20|08:15:45|Train ticket|Railway Company|-20.00
-2023-04-20|14:30:00|Phone bill|Telecom Provider|45.00
+2023-04-18|11:10:15|Fuel|Gas Station|-40.0
+2023-04-18|14:25:30|Internet bill|ISP|60.0
+2023-04-19|10:55:00|Lunch with clients|Restaurant|-75.5
+2023-04-19|16:40:20|Computer repair|Tech Services|-150.0
+2023-04-20|08:15:45|Train ticket|Railway Company|-20.0
+2023-04-20|14:30:00|Phone bill|Telecom Provider|45.0
 2023-04-21|09:20:30|Book purchase|Bookstore|-25.99
-2023-04-21|17:00:00|Car repair|Auto Shop|-200.00
-2023-04-22|10:00:15|Gift for friend|Gift Shop|-30.50
+2023-04-21|17:00:00|Car repair|Auto Shop|-200.0
+2023-04-22|10:00:15|Gift for friend|Gift Shop|-30.5
 2023-04-22|16:45:30|Subscription fee|Streaming Service|-9.99
-2023-04-23|12:35:00|Medical expenses|Hospital|-300.00
+2023-04-23|12:35:00|Medical expenses|Hospital|-300.0
 2023-04-23|18:20:45|Dinner|Restaurant|-50.75
-2023-04-24|11:45:20|Taxi fare|Taxi Company|-35.00
+2023-04-24|11:45:20|Taxi fare|Taxi Company|-35.0
 2023-04-24|15:55:00|Software purchase|Software Company|-99.99
 2023-04-25|10:10:10|Clothing purchase|Fashion Store|-70.25
-2023-04-25|14:30:30|Utility bill|Utility Company|-85.00
-2023-04-26|09:40:15|Coffee|Cafe|-5.50
-2023-04-26|13:20:00|Membership renewal|Gym|-75.00
+2023-04-25|14:30:30|Utility bill|Utility Company|-85.0
+2023-04-26|09:40:15|Coffee|Cafe|-5.5
+2023-04-26|13:20:00|Membership renewal|Gym|-75.0
 2023-04-27|08:55:30|Pet supplies|Pet Store|-25.99
-2023-04-27|16:15:20|Phone accessories|Electronics Store|-15.00
-2023-04-28|10:25:00|Movie tickets|Cinema|-30.00
-2023-04-28|18:00:45|Home repair|Hardware Store|-120.00
-2023-04-29|12:30:20|Dental checkup|Dentist|80.00
-2023-04-29|17:45:00|Concert tickets|Ticket Agency|-90.50
+2023-04-27|16:15:20|Phone accessories|Electronics Store|-15.0
+2023-04-28|10:25:00|Movie tickets|Cinema|-30.0
+2023-04-28|18:00:45|Home repair|Hardware Store|-120.0
+2023-04-29|12:30:20|Dental checkup|Dentist|80.0
+2023-04-29|17:45:00|Concert tickets|Ticket Agency|-90.5
 2023-04-30|11:15:30|Office equipment|Office Supply Store|-55.75
 2023-04-30|14:20:15|Subscription renewal|Magazine Company|-19.99
-2023-05-01|09:40:00|Groceries|Supermarket|-70.00
-2023-05-01|15:10:45|Consultation fee|Medical Clinic|150.00
+2023-05-01|09:40:00|Groceries|Supermarket|-70.0
+2023-05-01|15:10:45|Consultation fee|Medical Clinic|150.0
 2023-05-02|08:25:30|Lunch|Restaurant|-40.25
-2024-04-25|09:25:30|Grocery shopping|Supermarket|-75.50
-2024-04-15|13:15:00|Online order|Online Retailer|-120.00
+2024-04-25|09:25:30|Grocery shopping|Supermarket|-75.5
+2024-04-15|13:15:00|Online order|Online Retailer|-120.0
 2024-05-10|10:45:20|Coffee|Cafe|-5.25
-2024-05-02|11:30:00|Tech gadgets|Electronics Store|-300.00
-2024-04-10|14:20:45|Dining out|Restaurant|-45.00
+2024-05-02|11:30:00|Tech gadgets|Electronics Store|-300.0
+2024-04-10|14:20:45|Dining out|Restaurant|-45.0
 2024-05-05|08:55:10|Subscription renewal|Streaming Service|-15.99
 2024-03-30|12:40:15|Home decor purchase|Home Improvement Store|-90.75
-2024-05-12|16:30:00|Medical expenses|Hospital|-250.00
-2024-03-18|10:20:30|Fuel refill|Gas Station|-40.00
-2024-05-20|09:15:25|Grocery shopping|Supermarket|-80.50
-2024-05-24|13:05:00|Restaurant bill|Restaurant|-55.00
+2024-05-12|16:30:00|Medical expenses|Hospital|-250.0
+2024-03-18|10:20:30|Fuel refill|Gas Station|-40.0
+2024-05-20|09:15:25|Grocery shopping|Supermarket|-80.5
+2024-05-24|13:05:00|Restaurant bill|Restaurant|-55.0
 2024-05-08|11:50:45|Tech gadgets|Electronics Store|-180.99
 2024-04-29|15:10:30|Book purchase|Bookstore|-25.75
-2024-05-14|08:35:20|Gift purchase|Gift Shop|-20.00
-2024-04-22|14:45:00|Utility bill|Utility Company|-55.00
-2024-05-30|10:30:30|Movie tickets|Cinema|-30.00
+2024-05-14|08:35:20|Gift purchase|Gift Shop|-20.0
+2024-04-22|14:45:00|Utility bill|Utility Company|-55.0
+2024-05-30|10:30:30|Movie tickets|Cinema|-30.0
 2024-03-07|09:20:15|Coffee|Cafe|-4.25
-2024-05-17|12:15:00|Grocery shopping|Supermarket|-65.50
-2024-04-15|13:50:30|Medical expenses|Hospital|-200.00
+2024-05-17|12:15:00|Grocery shopping|Supermarket|-65.5
+2024-04-15|13:50:30|Medical expenses|Hospital|-200.0
 2024-06-01|14:10:45|Dining out|Restaurant|-40.25
 2024-04-10|09:35:20|Tech gadgets|Electronics Store|-150.99
-2024-05-28|08:40:00|Online order|Online Retailer|-60.00
-2024-04-25|09:25:30|Grocery shopping|Supermarket|-75.50
-2024-04-15|13:15:00|Online order|Online Retailer|-120.00
+2024-05-28|08:40:00|Online order|Online Retailer|-60.0
+2024-04-25|09:25:30|Grocery shopping|Supermarket|-75.5
+2024-04-15|13:15:00|Online order|Online Retailer|-120.0
 2024-05-10|10:45:20|Coffee|Cafe|-5.25
-2024-05-02|11:30:00|Tech gadgets|Electronics Store|-300.00
-2024-04-10|14:20:45|Dining out|Restaurant|-45.00
+2024-05-02|11:30:00|Tech gadgets|Electronics Store|-300.0
+2024-04-10|14:20:45|Dining out|Restaurant|-45.0
 2024-05-05|08:55:10|Subscription renewal|Streaming Service|-15.99
 2024-03-30|12:40:15|Home decor purchase|Home Improvement Store|-90.75
-2024-05-12|16:30:00|Medical expenses|Hospital|-250.00
-2024-03-18|10:20:30|Fuel refill|Gas Station|-40.00
-2024-05-20|09:15:25|Grocery shopping|Supermarket|-80.50
-2024-05-24|13:05:00|Restaurant bill|Restaurant|-55.00
+2024-05-12|16:30:00|Medical expenses|Hospital|-250.0
+2024-03-18|10:20:30|Fuel refill|Gas Station|-40.0
+2024-05-20|09:15:25|Grocery shopping|Supermarket|-80.5
+2024-05-24|13:05:00|Restaurant bill|Restaurant|-55.0
 2024-05-08|11:50:45|Tech gadgets|Electronics Store|-180.99
 2024-04-29|15:10:30|Book purchase|Bookstore|-25.75
-2024-05-14|08:35:20|Gift purchase|Gift Shop|-20.00
-2024-04-22|14:45:00|Utility bill|Utility Company|-55.00
-2024-05-30|10:30:30|Movie tickets|Cinema|-30.00
+2024-05-14|08:35:20|Gift purchase|Gift Shop|-20.0
+2024-04-22|14:45:00|Utility bill|Utility Company|-55.0
+2024-05-30|10:30:30|Movie tickets|Cinema|-30.0
 2024-03-07|09:20:15|Coffee|Cafe|-4.25
-2024-05-17|12:15:00|Grocery shopping|Supermarket|-65.50
-2024-04-15|13:50:30|Medical expenses|Hospital|-200.00
+2024-05-17|12:15:00|Grocery shopping|Supermarket|-65.5
+2024-04-15|13:50:30|Medical expenses|Hospital|-200.0
 2024-06-01|14:10:45|Dining out|Restaurant|-40.25
 2024-04-10|09:35:20|Tech gadgets|Electronics Store|-150.99
-2024-05-28|08:40:00|Online order|Online Retailer|-60.00
+2024-05-28|08:40:00|Online order|Online Retailer|-60.0
+2024-05-02|13:40:15|Shoes|Amazon|50.0
+2023-04-16|12:45:20|Shoes|Amazon|-50.0
+2023-05-01|09:40:00|Groceries|Supermarket|0.0
+2023-05-01|15:10:45|Consultation fee|Medical Clinic|0.0
+2023-05-02|08:25:30|Lunch|Restaurant|0.0
+2024-04-25|09:25:30|Grocery shopping|Supermarket|0.0
+2024-04-15|13:15:00|Online order|Online Retailer|0.0
+2024-03-10|11:30:00|Electronics purchase|Electronics Store|0.0
+2024-02-20|14:45:20|Dinner with friends|Restaurant|0.0
+2023-06-05|17:20:10|Movie tickets|Cinema|0.0
+2023-07-12|10:00:00|Gas refueling|Gas Station|0.0
+2024-01-02|08:00:00|Gym membership|Fitness Center|0.0
