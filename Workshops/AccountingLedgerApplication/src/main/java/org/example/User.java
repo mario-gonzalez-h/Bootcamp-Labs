@@ -34,10 +34,10 @@ public class User {
 
     /*
      * Constructor to create a new User object with provided information.
-     * @param name The name of the user.
-     * @param email The email of the user.
-     * @param address The address of the user.
-     * @param phoneNumber The phone number of the user.
+     * The name of the user.
+     * The email of the user.
+     * The address of the user.
+     * The phone number of the user.
      */
 
     public User(String name, String email, String address, String phoneNumber) {
