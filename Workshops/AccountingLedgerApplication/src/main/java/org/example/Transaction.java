@@ -12,11 +12,11 @@ public class Transaction {
 
     /*
      * Constructor to create a Transaction object with provided information.
-     * @param date The date of the transaction.
-     * @param time The time of the transaction.
-     * @param description The description of the transaction.
-     * @param vendor The vendor related to the transaction.
-     * @param amount The amount of the transaction.
+     * The date of the transaction.
+     *  The time of the transaction.
+     * The description of the transaction.
+     * The vendor related to the transaction.
+     * The amount of the transaction.
      */
 
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
