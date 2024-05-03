@@ -137,9 +137,7 @@ public class UserInterface {
     /*
      * Displays options for the reports screen and handles user input.
      */
-    /*
-     * Displays options for the reports screen and handles user input.
-     */
+
     private static void displayReportOptions(Scanner scanner, List<Transaction> transactions) {
         boolean isReportRunning = true;
 
